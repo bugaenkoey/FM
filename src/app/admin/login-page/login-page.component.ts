@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/auth.service';
+//import { AuthService } from 'src/app/shared/auth.service';
+import { AuthService } from './../../shared/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -43,11 +44,12 @@ export class LoginPageComponent implements OnInit {
     const user = {
       email: this.form.value.email,
       password: this.form.value.password,
+      returnSecureToken:true,
     };
     console.log(user);
 
     this.auth.login(user).subscribe(res => {
-      // console.log(res)
+      console.log(res)
       this.form.reset;
 this.router.navigate(['/admin','dashboard']);
 this.submited = false;
