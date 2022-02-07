@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth.service';
 
-
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -21,10 +20,7 @@ export class LoginPageComponent implements OnInit {
   get f() {
     return this.form.controls;
   }
-  constructor(
-    public auth:AuthService,
-    private router:Router,
-    ) {}
+  constructor(public auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -35,8 +31,9 @@ export class LoginPageComponent implements OnInit {
       ]),
     });
   }
+
   submit() {
-    console.log('submit==>>',this.form);
+    console.log('submit==>>', this.form);
     if (this.form.invalid) {
       console.log('this.form --< not');
       return;
@@ -44,19 +41,20 @@ export class LoginPageComponent implements OnInit {
     const user = {
       email: this.form.value.email,
       password: this.form.value.password,
-      returnSecureToken:true,
+      returnSecureToken: true,
     };
     console.log(user);
 
-    this.auth.login(user).subscribe(res => {
-      console.log(res)
-      this.form.reset;
-this.router.navigate(['/admin','dashboard']);
-this.submited = false;
-
-    },()=>{
-      this.submited = false;
-    }
-    )
+    this.auth.login(user).subscribe(
+      (res) => {
+        console.log(res);
+        this.form.reset;
+        this.router.navigate(['/admin', 'dashboard']);
+        this.submited = false;
+      },
+      () => {
+        this.submited = false;
+      }
+    );
   }
 }
