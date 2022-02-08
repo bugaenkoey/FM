@@ -9,8 +9,11 @@ import { EditPageComponent } from './edit-page/edit-page.component';
 import { OrdersPageComponent } from './orders-page/orders-page.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { OrdersweekPageComponent } from './ordersweek-page/ordersweek-page.component';
-import { ServicesPageComponent } from './services-page/services-page.component';
+// import { ServicesPageComponent } from './services-page/services-page.component';
 import { UsersPageComponent } from './users-page/users-page.component';
+import { NailServiceComponent } from "../nail-service/nail-service.component";
+// import { AddOrderComponent } from "./add-order/add-order.component";
+
 
 @NgModule({
     imports:[
@@ -31,7 +34,9 @@ import { UsersPageComponent } from './users-page/users-page.component';
             {path:'ordersweek',component:OrdersweekPageComponent},
             {path:'orders',component:OrdersPageComponent},
             {path:'users',component:UsersPageComponent},
-            {path:'services',component:ServicesPageComponent},
+            // {path:'services',component:ServicesPageComponent},
+            {path:'services',component:NailServiceComponent},
+            // {path:'services',component:AddOrderComponent},
         ]
     }])
     ],
@@ -44,7 +49,8 @@ import { UsersPageComponent } from './users-page/users-page.component';
       EditPageComponent,
       OrdersPageComponent,
       OrdersweekPageComponent,
-      ServicesPageComponent,
+    //   ServicesPageComponent,
+    NailServiceComponent,
       UsersPageComponent
     ]
 

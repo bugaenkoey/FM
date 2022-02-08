@@ -1,0 +1,75 @@
+<!-- <app-nav-menu></app-nav-menu> -->
+<p>add-order works!</p>
+
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+  <div class="user" formGroupName="user">
+    <div>
+      <label>SurName</label>
+      <input
+        type="text"
+        formControlName="surname"
+        placeholder="Не может быть пустым"
+      />
+      <!-- <div
+        class="alert alert-danger"
+        *ngIf="
+          myForm.controls['surname'].invalid &&
+          myForm.controls['surname'].touched
+        "
+      >
+        Не может быть пустым
+      </div> -->
+    </div>
+
+    <div>
+      <label>MyName</label>
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Не может быть пустым"
+      />
+    </div>
+
+    <div>
+      <label>Phone</label>
+      <input
+        type="tel"
+        formControlName="tel"
+        placeholder="Не может быть пустым"
+      />
+    </div>
+  </div>
+
+  <div class="order" formGroupName="order">
+    <div class="select-nail-services">
+      <label>service</label>
+      <select id="" formControlName="service">
+        <option
+          value=""
+          *ngFor="let item of nailservices"
+          [ngValue]="item.id"
+        >
+          {{item.id}} {{ item.name }} {{ item.price }}грн. По времени
+          {{ item.duration }} часа
+        </option>
+      </select>
+    </div>
+
+    <div class="dataOrder">
+      <label>Data</label>
+      <input
+        type="date"
+        formControlName="date"
+        min="{{ carent_date }}"
+        max="{{ max_date }}"
+      />
+    </div>
+
+    <div class="noteOrder">
+      <label>Note</label>
+      <input type="text" formControlName="note" />
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">add user</button>
+</form>

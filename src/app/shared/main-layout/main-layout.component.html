@@ -1,18 +1,26 @@
 <nav class="navbar bg-dark">
     <h2>FavoriteMaster</h2>
+
     <ul>
+        <li routerLinkActive="active">
+            <a [routerLink]="['addorder']">Записаться</a>
+          </li>
+
         <li routerLinkActive="Active">
-            <a href="#">Phone</a>
+            <a [routerLink]="['gallery']">Галерея</a>
         </li>
         <li routerLinkActive="Active">
-            <a href="#">Tablet</a>
+            <a [routerLink]="['contacts']">Контакты</a>
         </li>
         <li routerLinkActive="Active">
-            <a href="#">Laptop</a>
+            <a [routerLink]="['services']">Услуги</a>
         </li>
         <li routerLinkActive="Active">
             <a [routerLink]="['/cart']">Cart</a>
         </li>
+        <li routerLinkActive="active">
+            <a [routerLink]="['/dashboard']">Dashboad</a>
+          </li>
     </ul>
 </nav>
 <router-outlet></router-outlet>

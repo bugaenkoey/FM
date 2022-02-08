@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Login as User</h2>
+  <div class="form-control">
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" />
+    <div *ngIf="f.email.touched && f.email.invalid">
+        <small class="text-danger" *ngIf="f.email.errors?.required">
+            Name is required!
+        </small>
+        <small class="text-danger" *ngIf="f.email.errors?.email">
+            Email invalid
+        </small>
+        
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" />
+
+    <div *ngIf="f.password.touched && f.password.invalid">
+        <small class="text-danger" *ngIf="f.password.errors?.required">
+            password is required!
+        </small>
+        <small class="text-danger" *ngIf="f.password.errors?.minlength">
+            password invalid {{f.password.errors?.minlength.requiredLength}} characters. 
+            Now he {{f.password.errors?.minlength.actualLength}}
+        </small>
+        
+    </div>
+<!-- 
+    <div *ngIf="form.get('password').touchet && form.get('password').invalid" class="validation">
+      <small *ngIf="form.get('password').errors?.required"> Enter password </small>
+    </div> -->
+  </div>
+
+
+  
+  <button type="submit" class="btn btn-primary btn-block" [disabled] = "form.invalid || submited">LogOn</button>
+</form>
