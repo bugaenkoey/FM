@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-page.component.scss']
 })
 export class DashboardPageComponent implements OnInit {
-  items =["Tom", "Bob", "Sam", "Bill"];
+  // items =["Tom", "Bob", "Sam", "Bill"];
   constructor() { }
 
   ngOnInit(): void {

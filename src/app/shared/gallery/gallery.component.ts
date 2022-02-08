@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DatasService } from 'src/app/datas.service';
-import { GALLERY } from 'src/app/mock-nailServices';
+import { DatasService } from './../../datas.service';
+import { GALLERY } from './../../mock-nailServices';
 // import { DatasService } from '../datas.service';
 // import { GALLERY } from '../mock-nailServices';
 

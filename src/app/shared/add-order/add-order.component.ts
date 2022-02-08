@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 // import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { DatasService } from 'src/app/datas.service';
-import { INailServise } from 'src/app/service/INailServise';
-import { Order } from 'src/app/service/Order';
-import { User } from 'src/app/service/User';
+// import { DatasService } from 'src/app/datas.service';
+import { INailServise } from './../../service/INailServise';
+import { Order } from './../../service/Order';
+import { User } from './../../service/User';
 // import { create } from 'domain';
 // import { createSecureServer } from 'http2';
-// import { DatasService } from '../datas.service';
+import { DatasService } from './../../datas.service';
 // import { NAILSERVICES } from '../mock-nailServices';
 // import { INailServise } from '../service/INailServise';
 // import { Order } from '../service/Order';
