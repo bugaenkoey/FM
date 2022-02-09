@@ -12,6 +12,8 @@ import { OrdersweekPageComponent } from './ordersweek-page/ordersweek-page.compo
 // import { ServicesPageComponent } from './services-page/services-page.component';
 import { UsersPageComponent } from './users-page/users-page.component';
 import { NailServiceComponent } from "../nail-service/nail-service.component";
+import { GetAllUserComponent } from './get-all-user/get-all-user.component';
+import { GetAllOrderComponent } from './get-all-order/get-all-order.component';
 // import { AddOrderComponent } from "./add-order/add-order.component";
 
 
@@ -27,13 +29,15 @@ import { NailServiceComponent } from "../nail-service/nail-service.component";
             {path:'login',component:LoginPageComponent},
             {path:'dashboard',component:DashboardPageComponent},
             {path:'add',component:AddPageComponent},
-            {path:'orders',component:OrdersPageComponent},
+            // {path:'orders',component:OrdersPageComponent},
             {path:'product/:id/edit',component:EditPageComponent},
             
 
             {path:'ordersweek',component:OrdersweekPageComponent},
-            {path:'orders',component:OrdersPageComponent},
-            {path:'users',component:UsersPageComponent},
+            // {path:'orders',component:OrdersPageComponent},
+            {path:'orders',component:GetAllOrderComponent},
+            // {path:'users',component:UsersPageComponent},
+            {path:'users',component:GetAllUserComponent},
             // {path:'services',component:ServicesPageComponent},
             {path:'services',component:NailServiceComponent},
             // {path:'services',component:AddOrderComponent},
@@ -51,7 +55,9 @@ import { NailServiceComponent } from "../nail-service/nail-service.component";
       OrdersweekPageComponent,
     //   ServicesPageComponent,
     NailServiceComponent,
-      UsersPageComponent
+      UsersPageComponent,
+      GetAllUserComponent,
+      GetAllOrderComponent
     ]
 
 })

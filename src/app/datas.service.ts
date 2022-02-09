@@ -22,33 +22,37 @@ export class DatasService {
   public linkOrder = 'https://localhost:44354/order';
   public linkUser = 'https://localhost:44354/user';
 
+  //   const otvet:any = this.client.get<INailServise[]>(this.linkNailServise)
+  //   .pipe(catchError(error=> {
+  //     if(error.status ==0){console.log('eeeeeeeeeeeeeeeeeeeee')}else{
+  //       console.log('rrrrrrrrrrrrrrrrrrrrr')
+  //     };
+  //     console.log(error.
+  //       status); return throwError(console.error);
+  //  }));
+
+  // const otvet: any = this.client
+  //   .get<INailServise[]>(this.linkNailServise)
+  //   .pipe(
+  //     catchError((error) => {
+  //       if (error) {
+  //         console.log('Сервер не отвечает!');
+  //         alert(' Сервер не отвечает! ');
+  //         // return
+  //       }
+  //       return throwError(console.error);
+  //     }));
+
   getNailServises(): Observable<INailServise[]> {
-    //   const otvet:any = this.client.get<INailServise[]>(this.linkNailServise)
-    //   .pipe(catchError(error=> {
-    //     if(error.status ==0){console.log('eeeeeeeeeeeeeeeeeeeee')}else{
-    //       console.log('rrrrrrrrrrrrrrrrrrrrr')
-    //     };
-    //     console.log(error.
-    //       status); return throwError(console.error);
-    //  }));
-
-    // const otvet: any = this.client
-    //   .get<INailServise[]>(this.linkNailServise)
-    //   .pipe(
-    //     catchError((error) => {
-    //       if (error) {
-    //         console.log('Сервер не отвечает!');
-    //         alert(' Сервер не отвечает! ');
-    //         // return
-    //       }
-    //       return throwError(console.error);
-    //     }));
-
     return this.client.get<INailServise[]>(this.linkNailServise);
   }
 
   getOrders(): Observable<IOrder[]> {
     return this.client.get<IOrder[]>(this.linkOrder);
+  }
+
+  getUsers(): Observable<IUser[]> {
+    return this.client.get<IUser[]>(this.linkUser);
   }
 
   /*
@@ -65,18 +69,18 @@ export class DatasService {
     "comment": "Menikure the Best"
   }
   */
-   sendOrder(order:IOrder) {
-     console.log(order);
-  //  let respons = this.client.post<IOrder[]>(this.linkOrder,order);
-   let respons = this.client.post<IOrder>(this.linkOrder,order);
-   console.log(respons);
-   return respons;
+  sendOrder(order: IOrder) {
+    console.log(order);
+    //  let respons = this.client.post<IOrder[]>(this.linkOrder,order);
+    let respons = this.client.post<IOrder>(this.linkOrder, order);
+    console.log(respons);
+    return respons;
   }
 
-  postUser(user:IUser): Observable<any>{
-   console.log(user);
-    let respons = this.client.post<IUser>(this.linkUser,user);
-   console.log(respons);
-   return respons;
+  postUser(user: IUser): Observable<any> {
+    console.log(user);
+    let respons = this.client.post<IUser>(this.linkUser, user);
+    console.log(respons);
+    return respons;
   }
 }

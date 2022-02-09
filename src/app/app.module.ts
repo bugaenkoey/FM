@@ -14,6 +14,9 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 import { AddOrderComponent } from './shared/add-order/add-order.component';
 import { GalleryComponent } from './shared/gallery/gallery.component';
 import { ContactsComponent } from './shared/contacts/contacts.component';
+import { LoginUserComponent } from './shared/login-user/login-user.component';
+import { RegistrationUserComponent } from './shared/registration-user/registration-user.component';
+import { EnterUserComponent } from './shared/enter-user/enter-user.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { ContactsComponent } from './shared/contacts/contacts.component';
     DashboardPageComponent,
     GalleryComponent,
     ContactsComponent,
-    AddOrderComponent
+    AddOrderComponent,
+    LoginUserComponent,
+    RegistrationUserComponent,
+    EnterUserComponent
   ],
   imports: [
     BrowserModule,

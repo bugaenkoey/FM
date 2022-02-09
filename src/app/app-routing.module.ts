@@ -7,8 +7,11 @@ import { NailServiceComponent } from './nail-service/nail-service.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { AddOrderComponent } from './shared/add-order/add-order.component';
 import { ContactsComponent } from './shared/contacts/contacts.component';
+import { EnterUserComponent } from './shared/enter-user/enter-user.component';
 import { GalleryComponent } from './shared/gallery/gallery.component';
+import { LoginUserComponent } from './shared/login-user/login-user.component';
 import { MainLayoutComponent } from './shared/main-layout/main-layout.component';
+import { RegistrationUserComponent } from './shared/registration-user/registration-user.component';
 
 const routes: Routes = [
   {
@@ -22,6 +25,9 @@ const routes: Routes = [
       { path: 'product/:id', component: ProductPageComponent },
       
       {path:'contacts',component:ContactsComponent},
+      {path:'adduser',component:LoginUserComponent},
+      {path:'registration',component:RegistrationUserComponent},
+      {path:'enter',component:EnterUserComponent},
       
       {path:'services',component:NailServiceComponent},
       {path:'gallery',component:GalleryComponent},
