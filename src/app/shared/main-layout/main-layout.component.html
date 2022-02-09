@@ -1,35 +1,42 @@
 <nav class="navbar bg-dark">
-    <h2>FavoriteMaster</h2>
+  <h2>FavoriteMaster</h2>
 
-    <ul>
-        <li routerLinkActive="active">
-            <a [routerLink]="['addorder']">Записаться</a>
-          </li>
+  <ul>
+    <li routerLinkActive="Active">
+      <a [routerLink]="['services']">Услуги</a>
+    </li>
 
-        <li routerLinkActive="Active">
-            <a [routerLink]="['gallery']">Галерея</a>
-        </li>
-        <li routerLinkActive="Active">
-            <a [routerLink]="['contacts']">Контакты</a>
-        </li>
-        <li routerLinkActive="Active">
-            <a [routerLink]="['services']">Услуги</a>
-        </li>
-        <li routerLinkActive="Active">
-            <a [routerLink]="['adduser']">adduser</a>
-        </li>
-        <li routerLinkActive="Active">
-            <a [routerLink]="['enter']">enter</a>
-        </li>
-        <li routerLinkActive="Active">
-            <a [routerLink]="['registration']">registration</a>
-        </li>
-        <li routerLinkActive="Active">
+    <li routerLinkActive="Active">
+      <a [routerLink]="['gallery']">Галерея</a>
+    </li>
+
+    <li routerLinkActive="Active">
+      <a [routerLink]="['contacts']">Контакты</a>
+    </li>
+
+    <li routerLinkActive="Active">
+      <a [routerLink]="['enter']">enter</a>
+    </li>
+
+    <li routerLinkActive="active">
+      <a [routerLink]="['addorder']">Записаться</a>
+    </li>
+
+    <li routerLinkActive="Active">
+      <a [routerLink]="['adduser']">adduser</a>
+    </li>
+
+    <li routerLinkActive="Active">
+      <a [routerLink]="['registration']">registration</a>
+    </li>
+
+    <!-- <li routerLinkActive="Active">
             <a [routerLink]="['/cart']">Cart</a>
         </li>
+
         <li routerLinkActive="active">
             <a [routerLink]="['/dashboard']">Dashboad</a>
-          </li>
-    </ul>
+          </li> -->
+  </ul>
 </nav>
 <router-outlet></router-outlet>
