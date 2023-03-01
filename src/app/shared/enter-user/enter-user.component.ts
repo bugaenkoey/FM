@@ -9,6 +9,9 @@ import { DatasService } from './../../datas.service';
   styleUrls: ['./enter-user.component.scss']
 })
 export class EnterUserComponent implements OnInit {
+
+  public  carentUser : User = new User( "","",0,undefined );
+
   myForm!: FormGroup;
   constructor(public datasService: DatasService) { }
 
@@ -43,20 +46,19 @@ export class EnterUserComponent implements OnInit {
   postUser(user: User) {
     this.datasService.postUser(user).subscribe(
       (data) => {
-        console.log(data);
+        // console.log(data);
 
+        //   localStorage.setItem('user-id', data.toString());
         
-          localStorage.setItem('user-id', data.toString());
-        
-        console.log(localStorage.getItem('user-id'));
+        // console.log(localStorage.getItem('user-id'));
 
         // this.nailservices = data;
+        this.carentUser = data;
         return data;
       },
       (error) => {
         console.log('Server not responding!' + error.message);
         alert(' Сервер не отвечает! ' + error.message);
-        // this.nailservices = NAILSERVICES;
       }
     );
     return null;
@@ -80,16 +82,30 @@ export class EnterUserComponent implements OnInit {
 
     // this.myForm.reset();
   }
-  getPhone(phone: number) {
+  public   getPhone(phone: number) {
     
     this.datasService.getPhone(phone).subscribe(
       (data) => {
-      
+        console.log(data);
+
+        User.user = data;
         //  var id = data.id;
         // if (typeof (data.id) != "undefined" || typeof (data.id) != "null"){
          if (typeof(data.id) === "number"){
+
+           this.carentUser = data;
           console.log(data.id);
         localStorage.setItem('user-id-phone', data.id.toString());
+
+
+        var userJson = JSON.stringify(data);
+        console.log(userJson);
+        localStorage.setItem('user-json', userJson);
+      //  localStorage.setItem('user', JSON.stringify(data));
+     //   var carentUser2 = JSON.parse(localStorage.getItem('user'));
+
+
+
         }
         // else {
           // if (typeof(data.id) === "undefined" ){

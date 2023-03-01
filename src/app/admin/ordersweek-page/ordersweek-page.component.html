@@ -1,1 +1,17 @@
-<p>ordersweek-page works!</p>
+<p>ordersweek-page works&&!</p>
+
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+  <div class="line" formGroupName="orders">
+    <div class="dataOrder">
+      <label>Data Start</label>
+      <input formControlName="startDate" type="date" value="2022-06-17" />
+    </div>
+
+    <div class="dataOrder">
+      <label>Data End</label>
+      <input formControlName="endDate" type="date" />
+    </div>
+
+    <button type="submit">ok</button>
+  </div>
+</form>

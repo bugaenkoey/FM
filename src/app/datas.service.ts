@@ -8,19 +8,21 @@ import { IOrder } from './service/IOrder';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { IUser } from './service/IUser';
+import { User } from './service/User';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DatasService {
   constructor(private client: HttpClient) {}
-
+  
   // getAll() {
-  //   return NAILSERVICES;
+    //   return NAILSERVICES;
   // }
   public linkNailServise = 'https://localhost:44354/service';
   public linkOrder = 'https://localhost:44354/order';
   public linkUser = 'https://localhost:44354/user';
+  public linkPhone = 'https://localhost:44354/phone';
 
   //   const otvet:any = this.client.get<INailServise[]>(this.linkNailServise)
   //   .pipe(catchError(error=> {
@@ -34,14 +36,20 @@ export class DatasService {
   // const otvet: any = this.client
   //   .get<INailServise[]>(this.linkNailServise)
   //   .pipe(
-  //     catchError((error) => {
-  //       if (error) {
-  //         console.log('Сервер не отвечает!');
-  //         alert(' Сервер не отвечает! ');
-  //         // return
-  //       }
-  //       return throwError(console.error);
+    //     catchError((error) => {
+      //       if (error) {
+        //         console.log('Сервер не отвечает!');
+        //         alert(' Сервер не отвечает! ');
+        //         // return
+        //       }
+        //       return throwError(console.error);
   //     }));
+
+//linkPhone
+  getPhone(phone: number) {
+    let respons =  this.client.get<IUser>(this.linkPhone+"/"+ phone);
+    return respons;
+  }
 
   getNailServises(): Observable<INailServise[]> {
     return this.client.get<INailServise[]>(this.linkNailServise);
@@ -77,7 +85,7 @@ export class DatasService {
     return respons;
   }
 
-  postUser(user: IUser): Observable<any> {
+  postUser(user: IUser): Observable<User> {
     console.log(user);
     let respons = this.client.post<IUser>(this.linkUser, user);
     console.log(respons);

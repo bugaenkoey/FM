@@ -1,17 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-// import { Component, OnInit } from '@angular/core';
-// import { DatasService } from 'src/app/datas.service';
 import { INailServise } from './../../service/INailServise';
 import { Order } from './../../service/Order';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from './../../service/User';
 import { DatasService } from './../../datas.service';
-// import { create } from 'domain';
-// import { createSecureServer } from 'http2';
-// import { NAILSERVICES } from '../mock-nailServices';
-// import { INailServise } from '../service/INailServise';
-// import { Order } from '../service/Order';
-// import { User } from '../service/User';
+import { EnterUserComponent } from '../enter-user/enter-user.component';
+// import { NAILSERVICES } from '../mock-nailServices';  
 
 @Component({
   selector: 'app-add-order',
@@ -36,14 +30,29 @@ export class AddOrderComponent implements OnInit {
   submit() {
     console.log(this.myForm);
     let formData = { ...this.myForm.value };
+
     console.log('formData ==>', formData);
     console.log('formData.user --- ', formData.user);
     console.log('formData.order --- ', formData.order);
-    let user = this.createUser(formData.user);
-    let responsUser = this.postUser(user);
+
+    // let user = this.createUser(formData.user);
+    // let responsUser = this.postUser(user);
+
     // alert('postUser');
-    console.log(user);
-    console.log(responsUser);
+    // console.log(user);
+    // console.log(responsUser);
+
+   
+    //  console.log( EnterUserComponent.carentUser);
+    // formData.order.user =  this.datasService.getPhone(0o4040);
+
+    console.log(User.user);
+    // formData.order.user = User.user;
+    // formData.order.user =  localStorage.getItem('user-json');
+    
+     //   var carentUser2 = JSON.parse(localStorage.getItem('user'));
+     formData.order.userId = localStorage.getItem('user-id-phone');
+    //  formData.order.userId = 100;
 
     let order = this.createOrder(formData.order);
     // order = {
@@ -110,17 +119,17 @@ export class AddOrderComponent implements OnInit {
 
   createFormGroup(): FormGroup {
     return new FormGroup({
-      user: new FormGroup({
-        surname: new FormControl('Zuzina', [
-          Validators.required,
-          Validators.minLength(3),
-        ]),
-        name: new FormControl('Zina', [
-          Validators.required,
-          Validators.minLength(3),
-        ]),
-        tel: new FormControl('050123456', [Validators.required]),
-      }),
+      // user: new FormGroup({
+      //   surname: new FormControl('Zuzina', [
+      //     Validators.required,
+      //     Validators.minLength(3),
+      //   ]),
+      //   name: new FormControl('Zina', [
+      //     Validators.required,
+      //     Validators.minLength(3),
+      //   ]),
+      //   tel: new FormControl('050123456', [Validators.required]),
+      // }),
 
       order: new FormGroup({
         service: new FormControl('', Validators.required),
@@ -154,9 +163,11 @@ https://localhost:44354/order
 
       // formDataOrder.serviceId,
       // 5,
-      // formDataOrder.user,
+      formDataOrder.user,
       // "",
+     
       formDataOrder.userId,
+    //  102,
       // 41,
       formDataOrder.date,
       // new Date(formDataOrder.dateTime),
@@ -164,7 +175,7 @@ https://localhost:44354/order
       // '2021-11-06T00:00:00',
       // '2021-11-06',
       // formDataOrder.done,
-      true,
+      false,
       formDataOrder.note,
       // '',
       // formDataOrder.comment
@@ -189,27 +200,42 @@ https://localhost:44354/order
     return null;
   }
 
-  createUser(formDataUser: any): User {
-    return new User(formDataUser.name, formDataUser.surname, formDataUser.tel);
-  }
+  // createUser(formDataUser: any): User {
+  //   return new User(formDataUser.name, formDataUser.surname, formDataUser.tel);
+  // }
 
-  postUser(user: User) {
-    this.datasService.postUser(user).subscribe(
+  public user: User[] | undefined;
+
+  getUsers() {
+    this.datasService.getUsers().subscribe(
       (data) => {
         console.log(data);
-
-        localStorage.setItem('user-id', data.toString());
-        console.log(localStorage.getItem('user-id'));
-
-        // this.nailservices = data;
-        return data;
+        this.user = data;
       },
       (error) => {
-        console.log('Server not responding!' + error.message);
-        alert(' Сервер не отвечает! ' + error.message);
-        // this.nailservices = NAILSERVICES;
+        console.log('not server!' + error.message);
+        alert(' Сервер не отвечает! ');
       }
     );
-    return null;
   }
+
+  // postUser(user: User) {
+  //   this.datasService.postUser(user).subscribe(
+  //     (data) => {
+  //       console.log(data);
+
+  //       localStorage.setItem('user-id', data.toString());
+  //       console.log(localStorage.getItem('user-id'));
+
+  //       // this.nailservices = data;
+  //       return data;
+  //     },
+  //     (error) => {
+  //       console.log('Server not responding!' + error.message);
+  //       alert(' Сервер не отвечает! ' + error.message);
+  //       // this.nailservices = NAILSERVICES;
+  //     }
+  //   );
+  //   return null;
+  // }
 }

@@ -1,11 +1,20 @@
-<p>get-all-order works!0</p>
+<p>get-all-order works!02</p>
 
 
 <ul class="ordes">
     <li *ngFor="let item of ordes">
       
-      <!-- <span>{{ item.comment }} </span> -->
-     
+<!-- 
+{{ item.id}}
+{{ item.service}} 
+{{ item.serviceId}}
+{{ item.user}}
+{{ item.userId}}
+{{ item.dateTime}} 
+{{ item.done}}
+{{ item.note}}
+{{ item.comment }}  -->
+
       <span>{{ item.id}} </span>
       <span>{{ item.service}} </span>
       <span>{{ item.serviceId}} </span>
@@ -15,6 +24,7 @@
       <span>{{ item.done}} </span>
       <span>{{ item.note}} </span>
       <span>{{ item.comment }} </span>
+
 
     </li>
   </ul>

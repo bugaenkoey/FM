@@ -1,8 +1,11 @@
+import { IUser } from "./IUser";
+
 export interface IOrder{
     id?:number;
     service?:string;
     serviceId:number;
-    user?:string;
+    user:IUser;
+    // user?:string;
     userId:number;
     dateTime?:string;
     done:boolean;

@@ -2,11 +2,15 @@
 
 <ul class="nailservices">
   <li *ngFor="let item of nailservices">
-    
-    <span>{{ item.name }} </span>
-    <!-- <span>{{ item.description }} </span> -->
-    <span>{{ item.price }}грн. </span>
-    <span>По времени {{ item.duration }} часа</span>
+    <div>
+      <span>{{ item.name }} {{ item.description }} {{ item.price }}грн. Займет времени в часах  {{ item.duration }} ч. </span>
+    </div>
   </li>
 </ul>
-
+<!-- 
+<div>
+  <span>{{ item.name }} </span>
+  <span>{{ item.description }} </span>
+  <span>{{ item.price }}грн. </span>
+  <span>По времени {{ item.duration }} часа</span>
+</div> -->

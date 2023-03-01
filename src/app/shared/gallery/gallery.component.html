@@ -5,11 +5,26 @@
   <p *ngFor="let item of items; let i = index">{{i+1}}.{{item}}</p>
 </div> -->
 
+<!-- https://drive.google.com/file/d/1NSfgzeeUsM1WekDSv55kJDQsmdZU35mV/view?usp=sharing -->
+<iframe src="https://lh3.googleusercontent.com/pw/AM-JKLUgISItaQN8_1HBsMxA9HlSoJR-mfcAvmZnC7E4hwShgLbI9F-mwStyRPQB3ABW0o-mPMvM7aBltOPsSKgAxCY2XiUHDeSUAAHzE3w24LiknFhQ0VWS3Oj3V0qVYa8eNpzbM5OMt_jSaH0rLeuygpXv=w640-h809-no?authuser=0" width="800" height="600"></iframe>
+        <!-- <iframe src="https://instagram.com/natali131520?utm_medium=copy_link" width="400" height="200"></iframe> -->
+
+        <!-- <iframe src="https://www.instagram.com/p/Bx-Tc3aoxhg/?utm_medium=share_sheet" width="400" height="200"></iframe> -->
+
+        <!-- <a href= "https://photos.google.com/share/AF1QipPShQeHHoAlgpX2wWx4t49DC0xXjfRGXTYv28q8io9yVQuLFdHOrANbWYLAYiBI_w/photo/AF1QipNYodNOGA4ZMMJaxyD3k17SHUhkQVj6Wn-viJSs?key=TXlvOWZlcy1mMFFhQ1RKc09wZEJvQUJGZ3Bpd0Rn">rrr</a> -->
+
+         <!-- <iframe src="https://photos.google.com/share/AF1QipPShQeHHoAlgpX2wWx4t49DC0xXjfRGXTYv28q8io9yVQuLFdHOrANbWYLAYiBI_w/photo/AF1QipNYodNOGA4ZMMJaxyD3k17SHUhkQVj6Wn-viJSs?key=TXlvOWZlcy1mMFFhQ1RKc09wZEJvQUJGZ3Bpd0Rn"> 
+          <p>Your browser does not support iframes.</p>
+        </iframe>  -->
+
 <ol class="gallery">
-  <li *ngFor="let item of galery">
-    <a href={{item}}>{{item}}</a>
+  <li *ngFor="let item of galery ; let i = index">
+    <!-- <a href={{item}}>{{item}}</a> -->
+    <a href={{item}}>{{i+1}} Instagram</a>
+    <!-- <iframe src={{item}} width="400" height="200">{{item}}</iframe> -->
   </li>
 </ol>
+
 
 <!-- <ol>
     <li><a href="https://www.instagram.com/p/CVDgtFkIBPF/">Insagram</a></li>

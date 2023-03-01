@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './shared/main-layout/main-layout.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { ProductPageComponent } from './product-page/product-page.component';
-import { CartPageComponent } from './cart-page/cart-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,23 +13,24 @@ import { AddOrderComponent } from './shared/add-order/add-order.component';
 import { GalleryComponent } from './shared/gallery/gallery.component';
 import { ContactsComponent } from './shared/contacts/contacts.component';
 import { LoginUserComponent } from './shared/login-user/login-user.component';
-import { RegistrationUserComponent } from './shared/registration-user/registration-user.component';
+
+// import { RegistrationUserComponent } from './shared/registration-user/registration-user.component';
 import { EnterUserComponent } from './shared/enter-user/enter-user.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainLayoutComponent,
     MainPageComponent,
-    ProductPageComponent,
-    CartPageComponent,
     DashboardPageComponent,
     GalleryComponent,
     ContactsComponent,
     AddOrderComponent,
     LoginUserComponent,
-    RegistrationUserComponent,
-    EnterUserComponent
+    // RegistrationUserComponent,
+    EnterUserComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,

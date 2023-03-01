@@ -3,13 +3,13 @@
 
 <form [formGroup]="myForm" (ngSubmit)="submit()">
   <div class="user" formGroupName="user">
-    <div>
+    <!-- <div>
       <label>SurName</label>
       <input
         type="text"
         formControlName="surname"
         placeholder="Не может быть пустым"
-      />
+      /> -->
       <!-- <div
         class="alert alert-danger"
         *ngIf="
@@ -19,8 +19,8 @@
       >
         Не может быть пустым
       </div> -->
-    </div>
-
+    <!-- </div> -->
+<!-- 
     <div>
       <label>MyName</label>
       <input
@@ -37,7 +37,7 @@
         formControlName="tel"
         placeholder="Не может быть пустым"
       />
-    </div>
+    </div> -->
   </div>
 
   <div class="order" formGroupName="order">
