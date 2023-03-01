@@ -45,7 +45,9 @@ export class EnterUserComponent implements OnInit {
       (data) => {
         console.log(data);
 
-        localStorage.setItem('user-id', data.toString());
+        
+          localStorage.setItem('user-id', data.toString());
+        
         console.log(localStorage.getItem('user-id'));
 
         // this.nailservices = data;
@@ -67,13 +69,47 @@ export class EnterUserComponent implements OnInit {
     console.log('formData.user --- ', formData.user);
     // console.log('formData.order --- ', formData.order);
     let user = this.createUser(formData.user);
-    let responsUser = this.postUser(user);
+
+    // let responsUser = this.postUser(user);
+    let responsUser = this.getPhone(user.phone);
+
     // alert('postUser');
     console.log(user);
     console.log(responsUser);
 
 
     // this.myForm.reset();
+  }
+  getPhone(phone: number) {
+    
+    this.datasService.getPhone(phone).subscribe(
+      (data) => {
+      
+        //  var id = data.id;
+        // if (typeof (data.id) != "undefined" || typeof (data.id) != "null"){
+         if (typeof(data.id) === "number"){
+          console.log(data.id);
+        localStorage.setItem('user-id-phone', data.id.toString());
+        }
+        // else {
+          // if (typeof(data.id) === "undefined" ){
+          // localStorage.removeItem('user-id-phone');
+          // localStorage.setItem('user-id-phone', "");
+        // }
+       // localStorage.setItem('user-id-phone', id.toString());
+        console.log(localStorage.getItem('user-id-phone'));
+
+        // this.nailservices = data;
+        return data;
+      },
+      (error) => {
+        console.log('Server not responding!' + error.message);
+        alert(' Сервер не отвечает! ' + error.message);
+        // this.nailservices = NAILSERVICES;
+      }
+    );
+    localStorage.removeItem('user-id-phone');
+    return null;
   }
 
 }
